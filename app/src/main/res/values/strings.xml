@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">UTS Tekber H1101171043</string>
+    <string name="kom1">Activity</string>
+    <string name="kom2">Service</string>
+    <string name="kom3">Broadcast Receivers</string>
+    <string name="kom4">Providers</string>
+    <string name="kom5">Intent</string>
+
+
+    <string name="isi1">Activity adalah komponen pada aplikasi Android yang menampilkan dan mengatur halaman aplikasi sebagai tempat interaksi antara pengguna dengan aplikasi, seperti membuat panggilan telepon, mengambil foto, mengirim pesan singkat, atau mengirim email. Sebuah Activity mengatur satu halaman user interface aplikasi.\n
+
+   <br> Activity merupakan sebuah class yang menghandle sebuah halaman user interface pada aplikasi Android. Untuk membuat sebuah Activity, kita lakukan dengan membuat sebuah class yang meng-extends class Activity. Bila kita membuat project aplikasi Android baru pada Android Development Tools, maka ada sebuah class yang bernama MainActivity.java yang tergenerate secara otomatis. Class ini meng-extends class Activity (MainActivity extends Activity) sehingga class ini merupakan sebuah Activity. Activity menampilkan halaman user interface dengan memanggil fungsi onCreate(). Fungsi ini dipanggil ketika class dibuat. Di dalam fungsi tersebut, kita dapat menentukan xml apa yang kita jadikan sebagai halaman user interface dengan memanggil fungsi setContentView() dengan parameter berupa xml halaman user interface </br> \n
+    </string>
+
+    <string name="isi2">Service adalah komponen aplikasi yang menjalankan operasi tertentu yang bisa berjalan lama pada sistem Android, biasanya service itu berjalan di latar belakang. Service ini tidak menyediakan antarmuka pengguna (UI).
+Ada dua macam service pada Android, yaitu : \n
+
+   <br> 1.Started
+Service yang komponen aplikasinya dimulai dengan memanggil startService(). Service ini akan berjalan selama belum dimatikan atau proses yang dijalankan selesai. Service akan tetap berjalan walaupun komponen yang lain dimatikan oleh sistem Android. Service ini digunakan untuk melakukan proses yang tidak memberikan nilai balik ke komponen yang memanggil. Contohnya seperti mengunduh atau mengunggah berkas.  </br> \n
+  <br>  2. Bound
+Service jenis ini merupakan tipe service yang dijalankan oleh komponen lain, namun saling mengikat satu sama lain. Hubungan yang terjadi antar kedua komponen tersebut seperti client-server. Bisa saling menerima response dan menerima request yang ada. Pada service ini dimungkinkan terjadi proses IPC (Interprocess Communication). Service ini akan tetap berjalan di background selama masih ada komponen lain yang mengikatnya. Jika tidak, maka Service akan dimatikan oleh sistem. Aplikasi pemutar musik merupakan salah satu jenis aplikasi yang mengimplementasikan Service jenis ini.
+Perlu diingat, Service berjalan di Thread Utama dari proses hostingnya. Service tidak membuat Thread sendiri dan tidak berjalan di proses terpisah. Kecuali jika anda menetapkannya.
+Jika service anda akan melakukan pekerjaan yang banyak membutuhkan CPU atau operasi pemblokiran (seperti pemutaran MP3 atau jaringan), buat Thread baru dalam layanan untuk melakukan pekerjaan itu. Dengan menggunakan Thread terpisah, anda akan mengurangi risiko kesalahan Aplikasi Tidak Merespons (Application Not Responding/ANR) dan Thread utama aplikasi bisa terus disediakan untuk interaksi pengguna. </br> \n
+
+
+    </string>
+    <string name="isi3">Broadcast Receiver adalah sebuah komponen Android yang berfungsi untuk melakukan broadcast pesan dari aplikasi lain atau dari sistem itu sendiri.  Pesan yang di broadcast disebut event atau intent. Aplikasi melakukan broadcast untuk memberi tahu aplikasi lainnya bahwa beberapa data telah di unduh ke perangkat yang tersedia, lalu penerima broadcast akan menerima pesan untuk melakukan transfer informasi. Contoh lainnya seperti pemberitahuan file telah di unduh atau pemberitahuan jika battery tinggal 15% lagi, maka setelah itu apa yang harus dilakukan oleh sistem. BroadcastReceiver mengirimkan pesan dengan filter tertentu, filter inilah yang digunakan untuk menentukan kemana pesan tersebut akan terkirim. Disini kita akan membuat contoh program sederhana dengan BroadcastReceiver. \n
+
+    </string>
+    <string name="isi4">CONTENT PROVIDER adalah Penyedia konten di Android yang menyediakan cara yang fleksibel untuk membuat data yang tersedia di seluruh aplikasi. Misalkan Anda membuat semua jenis data dalam aplikasi Anda (misalnya menganggap Anda membuat daftar yang harus dilakukan dalam aplikasi Anda, maka daftar hal-hal adalah data) dan Anda menyimpannya pada setiap lokasi penyimpanan, mungkin dalam data base, sistem file atau dalam ruang penyimpanan online. Kemudian melalui penyedia konten aplikasi lain dapat query, akses atau bahkan memodifikasi data yang Anda buat, selama penyedia konten Anda memungkinkan. Dalam cara yang sama Anda dapat mengakses data yang utilitas lain telah dibuat, dengan menggunakan penyedia konten. Contoh penyedia konten di Android adalah database kontak. Penyedia Konten database kontak memungkinkan aplikasi lain untuk query, membaca, memodifikasi, dan menulis info kontak. Android datang dengan beberapa built lain Penyedia konten yang dapat kita gunakan dalam aplikasi kita. Semua penyedia konten diimplementasikan sebagai subclass dari kelas ContentProvider yang didefinisikan dalam Android SDK..Penyedia materi mengelola set data aplikasi secara bersama-sama, yang dapat Anda simpan di sistem file, di database
+        SQLite,
+        di web, atau di lokasi penyimpanan persisten lain yang dapat diakses aplikasi Anda. Melalui penyedia materi, aplikasi lain bisa melakukan
+        kueri atau memodifikasi data jika penyedia materi mengizinkannya. Misalnya, sistem Android menyediakan penyedia materi yang mengelola
+        informasi kontak pengguna. Karenanya, setiap aplikasi dengan izin yang sesuai bisa melakukan kueri mengenai bagian dari penyedia materi,
+        seperti ContactsContract.Data, untuk membaca dan menulis informasi tentang orang tertentu. Aplikasi ini membujuk agar memikirkan penyedia
+        konten sebagai abstraksi di database, karena terdapat banyak API dan dukungan dibuat untuk kasus umum tersebut. \n
+        Namun demikian, penyedia konten memiliki beragam tujuan inti untuk perspektif desain-sistem. Bagi sistem, penyedia konten adalah
+        titik masuk ke dalam suatu aplikasi untuk memublikasikan item data bernama, yang diidentifikasi oleh skema URI. Jadi sebuah aplikasi
+        dapat memutuskan bagaimana ia ingin memetakan data yang ada di dalamnya ke ruang nama URI, membagikan URI tersebut ke entitas lain yang
+        dapat menggunakannya guna mengakses data. \n
+       <br> Ada beberapa hal tertentu yang dapat dilakukan sistem dalam mengelola sebuah aplikasi: </br> \n
+
+        <br> 1. Menetapkan URI tidak mengharuskan aplikasi tetap berjalan, sehingga URI dapat terus ada setelah aplikasi yang memilikinya keluar.
+            Sistem hanya perlu memastikan bahwa aplikasi yang memilikinya masih berjalan saat harus mengambil data aplikasi tersebut dari URI yang
+            terkait. </br> \n
+      <br>  2. URI ini juga menyediakan model keamanan halus yang penting. Misalnya, sebuah aplikasi dapat menempatkan URO untuk gambar yang ada di
+          papan klip, namun membiarkan penyedia kontennya terkunci sehingga aplikasi lain tidak dapat mengaksesnya secara bebas. Apabila aplikasi
+          kedua berupaya mengakses URI tersebut di papan klip, sistem dapat mengizinkan aplikasi tersebut untuk mengakses data melalui pemberian
+          izin URI sementara sehingga diizinkan mengakses data hanya di belakang URI tersebut, namun tidak ada data lainnya di aplikasi kedua itu.
+      </br> \n
+
+    <br> Penyedia materi juga berguna untuk membaca dan menulis data privat ke aplikasi Anda dan tidak dibagikan. </br> \n
+
+    <br> Penyedia materi diimplementasikan sebagai subclass ContentProvider dan harus mengimplementasikan seperangkat standar API yang
+        memungkinkan aplikasi lain melakukan transaksi. Untuk informasi selengkapnya, lihat panduan developer Penyedia Materi. </br> \n
+
+        <br> Aspek unik dari desain sistem Android adalah aplikasi mana pun bisa memulai komponen aplikasi lain. Misalnya, jika Anda menginginkan
+            pengguna mengambil foto dengan kamera perangkat, bisa saja aplikasi lain yang melakukannya dan aplikasi Anda bisa menggunakannya, sebagai
+            ganti mengembangkan aktivitas sendiri untuk mengambil foto. Anda tidak perlu menggabungkan atau bahkan menghubungkan ke kode dari
+            aplikasi kamera. Sebagai gantinya, Anda dapat memulai aktivitas di aplikasi kamera yang berupa aktivitas mengambil sebuah foto.
+            Bila selesai, foto akan dikembalikan ke aplikasi sehingga Anda bisa menggunakannya. Bagi pengguna, kamera seakan menjadi bagian dari
+            aplikasi Anda. </br> \n
+
+        <br> Saat sistem memulai komponen, sistem akan memulai proses untuk aplikasi itu (jika belum berjalan) dan membuat instance class yang
+            diperlukan untuk komponen. Misalnya, jika aplikasi Anda memulai aktivitas dalam aplikasi kamera yang berupa aktivitas mengambil foto,
+            aktivitas itu akan berjalan dalam proses yang dimiliki oleh aplikasi kamera, bukan dalam proses aplikasi Anda. Karenanya, tidak seperti
+            aplikasi di sebagian besar sistem lain, aplikasi Android tidak memiliki titik masuk tunggal (tidak ada main() fungsi).</br> \n
+
+        <br> Karena sistem menjalankan setiap aplikasi dalam proses terpisah dengan izin file yang membatasi akses ke aplikasi lain, aplikasi Anda
+            tidak bisa langsung mengaktifkan komponen dari aplikasi lain. Namun demikian, sistem Android dapat melakukan hal tersebut. Untuk
+            mengaktifkan komponen dalam aplikasi lain, kirim pesan ke sistem yang menetapkan intent Anda untuk memulai komponen tertentu. </br>\n
+          <br> Selanjutnya sistem akan mengaktifkan komponen untuk Anda. </br> \n
+    </string>
+    <string name="isi5">IINTENT  Sebenarnya intent tidak masuk kedalam salah satu komponen aplikasi Android, tetapi itu adalah mekanisme untuk  mengaktifkan komponen dalam Android. Ini merupakan sistem pesan inti di Android dan mendefinisikan pesan untuk mengaktifkan komponen tertentu. Misalnya, jika Anda ingin memanggil aktivitas baru dari kegiatan Anda saat ini, Anda menjalankan intent dengan  maksud menjalankan aktivitas baru. Dan jika Anda ingin memulai aplikasi lain dari aktivitas Anda, maka Anda juga perlu mengaktifkan intent.Yaitu dengan membuat sebuah perintah, ke system android untuk membuat sesuatu terjadi.
+
+Ada dua jenis intent di Android: \n
+
+    <br> Intent Eksplisit:
+
+Dalam Intent eksplisit, kita sangat spesifik. Kami menentukan kegiatan mana yang aktif dalam menerima intent, Ini biasanya digunakan untuk komunikasi internal aplikasi. </br> \n
+
+
+ <br>    Intent Implisit:
+
+Dalam Intent implisit kita mengirimkan pesan ke sistem Android untuk menemukan Kegiatan cocok yang dapat merespon maksud kita. Misalnya, untuk mengirim e-mail, kita dapat menggunakan intent. Kami juga akan menentukan data yang akan dioperasikan. Pada menerima Intent, sistem Android akan memanggil sebuah Kegiatan yang mampu mengirim pesan e-mail dengan data yang kita ditentukan. Jika ada lebih dari satu kegiatan yang mampu menerima Intent, sistem menyajikan pemilih kepada pengguna sehingga ia dapat memilih Kegiatan / Aplikasi harus menanganinya
+ </br> \n
+
+
+    </string>
+
+
+    <string name="contoh1">Contoh Sytanx</string>
+    <string name="contoh2">Contoh Sytanx</string>
+    <string name="contoh3">Contoh Sytanx</string>
+    <string name="contoh4">Contoh Sytanx</string>
+    <string name="contoh5">Contoh Sytanx</string>
+
+
+    <string name="materi1">Link Materi</string>
+    <string name="materi2">Link Materi</string>
+    <string name="materi3">Link Materi</string>
+    <string name="materi4">Link Materi</string>
+    <string name="materi5">Link Materi</string>
+
+
+    <string name="back1">Menu Utama</string>
+    <string name="back2">Menu Utama</string>
+    <string name="back3">Menu Utama</string>
+    <string name="back4">Menu Utama</string>
+    <string name="back5">Menu Utama</string>
+
+    <string name="kode1">Activities</string>
+    <string name="kode2">Services</string>
+    <string name="kode3">Receivers</string>
+    <string name="kode4">Providers</string>
+    <string name="kode5">Intents</string>
+
+
+    <string name="activitas1">Gambar Aktivitas</string>
+    <string name="activitas2">Gambar Aktivitas</string>
+    <string name="service">Gambar Service</string>
+    <string name="receiver">Gambar Receiver</string>
+    <string name="provider">Gambar Provider</string>
+    <string name="intent">Gambar Intent</string>
+    <string name="filterintent">Gambar FilterIntent</string>
+
+
+    <string name="judul1">Gambar Activities</string>
+    <string name="judul2">Gambar Activities</string>
+    <string name="judul3">Gambar Services</string>
+    <string name="judul4">Gambar Receivers</string>
+    <string name="judul5">Gambar Providers</string>
+    <string name="judul6">Gambar Intents</string>
+    <string name="judul7">Gambar FilterIntents</string>
+
+    <string name="awal">UTS Teknologi Bergerak</string>
+
+
+
+
+
+
+</resources>
